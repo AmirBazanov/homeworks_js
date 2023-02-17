@@ -1,13 +1,13 @@
 export class StringConvert {
-    public upperCase = (str: string): string => str[0].toUpperCase() + str.slice(1).toLowerCase();
+    static upperCase = (str: string): string => str[0].toUpperCase() + str.slice(1).toLowerCase();
 
-    public wordsCount = (str: string) => {
+    static wordsCount = (str: string) => {
         return str.split(' ').filter(function (num) {
             return num != ''
         }).length;
     }
 
-    public rightSpacing = (str: string) => {
+    static rightSpacing = (str: string) => {
         const marks = [',', '.', '?', '!']
         let convertedStr = ''
         let prevChar = '';
@@ -26,7 +26,7 @@ export class StringConvert {
         return convertedStr.replace(/\s\s+/g, ' ')
     }
 
-    public uniqWordsCount = (str: string) => {
+    static uniqWordsCount = (str: string) => {
         let words = str.toLowerCase().replace(/,/g, '').split(" ")
         let wordMap: { [key: string]: number } = {};
 
