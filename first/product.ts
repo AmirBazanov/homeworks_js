@@ -25,11 +25,11 @@ export class Product {
                 if (el[1].match(/\d$/g)) {
                     const criterion: string = el[1].slice(0, el[1].length - 1)
                     const value: number = Number(el[1].slice(el[1].length - 1, el[1].length))
-                    isCriterionPass.push(!!Product.compareNumber(criterion, el[0], value, product))
+                    isCriterionPass.push(Product.compareNumber(criterion, el[0], value, product)!)
                 } else {
                     const criterion: string = el[1]
                     const value: string = el[2]
-                    isCriterionPass.push(!!Product.compareString(criterion, value, el[0], product))
+                    isCriterionPass.push(Product.compareString(criterion, value, el[0], product)!)
 
                 }
             })
