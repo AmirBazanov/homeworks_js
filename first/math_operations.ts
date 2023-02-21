@@ -1,26 +1,10 @@
 export class MathOperations {
-    static sum = (...args: number[]) => {
-        return args.reduce(function (a, b) {
-            return a + b;
-        })
-    }
-    static minus = (...args: number[]) => {
-        return args.reduce(function (a, b) {
-            return a - b;
-        })
-    }
+    static sum = (n1: bigint, n2: bigint): bigint => n1 + n2;
 
-    static multiply = (...args: number[]) => {
-        return args.reduce(function (a, b) {
-            return a * b;
-        })
-    }
+    static minus = (n1: bigint, n2: bigint): bigint => n1 - n2;
 
-    static division = (...args: number[]) => {
-        return args.reduce(function (a, b) {
-            return a / b;
-        })
-    }
+    static multiply = (n1: bigint, n2: bigint): bigint => n1 * n2;
+
+    static division = (n1: bigint, n2: bigint): bigint => n1 / n2
 }
 
-console.log(MathOperations.division(10, 2))

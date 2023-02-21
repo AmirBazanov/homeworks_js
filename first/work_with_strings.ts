@@ -9,22 +9,14 @@ export class StringConvert {
 
     static rightSpacing = (str: string) => {
         const marks = [',', '.', '?', '!']
-        let convertedStr = ''
-        let prevChar = '';
         str = str.replace(/\s\s+/g, ' ')
-        for (const char of str.split('')) {
-            if (!marks.includes(char)) {
-                convertedStr += char
-            } else {
-                if (prevChar == ' ') {
-                    convertedStr = convertedStr.slice(0, convertedStr.length - 1)
-                }
-                convertedStr += char + ' '
-            }
-            prevChar = char
-        }
-        return convertedStr.replace(/\s\s+/g, ' ')
+        marks.forEach((elem) => {
+            let regEx = new RegExp('\\s*[' + elem + ']\\s*', "g")
+            str = str.replace(regEx, elem + ' ');
+        })
+        return str
     }
+
 
     static uniqWordsCount = (str: string) => {
         let words = str.toLowerCase().replace(/,/g, '').split(" ")
